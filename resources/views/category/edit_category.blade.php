@@ -36,14 +36,14 @@
                 @csrf
                 <input type="hidden" name="id" required value="{{ $category->id }}">
                 <div class="mb-3">
-                    <label for="category_id">Task:</label>
+                    <label for="category_id">Category:</label>
                     <input type="text" class="form-control" value="{{ $category->name }}" name="category"
-                        id="category_id" placeholder="Enter Your Task">
+                        id="category_id" placeholder="Enter Category">
                 </div>
                 <div class="mb-3">
                     <label for="category_description">Category Description:</label>
                     <textarea name="category_description" id="category_description" class="form-control"
-                        placeholder="Enter Your Task Description Here" cols="30" rows="5">{{ $category->description }}</textarea>
+                        placeholder="Enter Category Description Here" cols="30" rows="5">{{ $category->description }}</textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
