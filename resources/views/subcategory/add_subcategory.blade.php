@@ -29,40 +29,28 @@
             <div>
                 <h2 class="text-center mb-4">ADD BOOK SUB CATEGORY HERE</h2>
             </div>
-            <form action="#" method="post" enctype="multipart/form-data">
+            <form action="{{ route('store_subcategory') }}" method="post" enctype="multipart/form-data">
                 @csrf
 
                 <div class="mb-3">
-                    <label for="category">Book Category: <span class="required_task">*</span> </label>
-                    <select name="category" id="category" class="form-select">
-                        <option value="">Choose Book Category</option>
-                        <option value="less">Less</option>
-                        <option value="medium">Medium</option>
-                        <option value="high">High</option>
+                    <label for="category">Book Category: </label>
+                    <select name="category_id" id="category" class="form-select">
+                        <option value="">Select The Category</option>
+                        @foreach ($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @endforeach
                     </select>
                 </div>
 
                 <div class="mb-3">
-                    <label for="subcategory">Book Sub Category: <span class="required_task">*</span> </label>
+                    <label for="subcategory">Book Sub Category: </label>
                     <input type="text" class="form-control" name="subcategory" id="subcategory"
-                        placeholder="Enter The Book Sub Category"
-                        @error('subcategory')
-                            is-invalid
-                        @enderror>
-                    @error('subcategory')
-                        <p style="color: red">{{ $message }}</p>
-                    @enderror
+                        placeholder="Enter The Book Sub Category">
                 </div>
                 <div class="mb-3">
                     <label for="category_description">Sub Category Description:</label>
-                    <textarea name="subcategory_description" id="subcategory_description"
-                        class="form-control @error('subcategory_description')
-                       is-invalid 
-                    @enderror"
+                    <textarea name="subcategory_description" id="subcategory_description" class="form-control"
                         placeholder="Add Your Sub Category Description Here" cols="30" rows="5"></textarea>
-                    @error('subcategory_description')
-                        <p style="color: red">{{ $message }}</p>
-                    @enderror
                 </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>
