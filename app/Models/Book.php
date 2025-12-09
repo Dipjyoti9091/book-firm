@@ -10,6 +10,7 @@ class Book extends Model
         'title',
         'author',
         'category_id',
+        'subcategory_id',
         'price',
         'stock',
         'description'
@@ -18,6 +19,11 @@ class Book extends Model
     public function category()
     {
         return $this->belongsTo(Category::class, 'category_id');
+    }
+
+    public function subcategory()
+    {
+        return $this->belongsTo(Subcategory::class, 'subcategory_id');
     }
 
 }
