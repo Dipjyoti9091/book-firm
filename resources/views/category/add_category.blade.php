@@ -20,7 +20,7 @@
                 <a href="#" class="btn btn-dark">BUTTON TO ADD</a>
             </div>
             <div class="col-md-6 d-flex justify-content-end">
-                <a href="#" class="btn btn-dark">BUTTON TO ADD</a>
+                <a href="{{ route('logout') }}" class="btn btn-dark">LOGOUT</a>
             </div>
         </div>
     </div>
